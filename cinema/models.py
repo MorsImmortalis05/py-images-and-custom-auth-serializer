@@ -6,6 +6,7 @@ from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
 
+
 class CinemaHall(models.Model):
     name = models.CharField(max_length=255)
     rows = models.IntegerField()
@@ -46,7 +47,7 @@ class Movie(models.Model):
     actors = models.ManyToManyField(Actor)
     image = models.ImageField(null=True, blank=True, upload_to="uploads/")
 
-    def create_custom_path(instance, filename):
+    def create_custom_path(self, instance, filename):
         _, extension = os.path.splitext(filename)
         return os.path.join(
             "uploads/images/",

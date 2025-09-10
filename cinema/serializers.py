@@ -26,8 +26,8 @@ class UserSerializer(serializers.ModelSerializer):
                 "style": {
                     "input_type": "password"
                 },
-            "label": _("Password")
-        }
+                "label": _("Password")
+            }
         }
 
     def create(self, validated_data):
